@@ -21,7 +21,7 @@ def lambda_handler(event, context):
     print(jsondate_result)
     return response
 ```
-
+## Parquet Conversion
 ### send record
 ```json
 {"datetime": "2023-09-23 10:35:39.103628"}
