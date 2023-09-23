@@ -27,7 +27,7 @@ def lambda_handler(event, context):
 {"datetime": "2023-09-23 10:35:39.103628"}
 ```
 ### python Field
-```json
+```
         json_data = {
                     "datetime": [payload1['datetime']]
                 }
@@ -39,7 +39,7 @@ def lambda_handler(event, context):
 ```
 
 ### python Field
-```json
+```
         json_data = {
                     "msg": [payload1['msg']],
                     "age": [payload1['age']]
