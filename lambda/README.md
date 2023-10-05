@@ -52,5 +52,6 @@ bea69d02-828a-4c7c-8b57-ad784a2eb373
 
 firehose_partitioning.py record data
 ```
-{"timestamp": 1696490923.0, "remote_addr": "127.0.0.1", "method": "GET", "path": "/v1/color/melon", "protocol": "HTTP/1.1", "status_code": "200"}
+before: {"timestamp":"2023-10-05 07:28:43","remote_addr":"127.0.0.1","method":"GET","path":"/v1/color/melon","protocol":"HTTP/1.1","status_code":"200"}
+after: {"timestamp": 1696490923.0, "remote_addr": "127.0.0.1", "method": "GET", "path": "/v1/color/melon", "protocol": "HTTP/1.1", "status_code": "200"}
 ```
