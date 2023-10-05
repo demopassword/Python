@@ -49,3 +49,8 @@ REPORT RequestId: bea69d02-828a-4c7c-8b57-ad784a2eb373	Duration: 2.37 ms	Billed 
 Request ID
 bea69d02-828a-4c7c-8b57-ad784a2eb373
 ```
+
+firehose_partitioning.py record data
+```
+{"timestamp": 1696490923.0, "remote_addr": "127.0.0.1", "method": "GET", "path": "/v1/color/melon", "protocol": "HTTP/1.1", "status_code": "200"}
+```
