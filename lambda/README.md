@@ -1,4 +1,4 @@
-envet json
+event json
 ```json
 {
   "invocationId": "invocationIdExample",
