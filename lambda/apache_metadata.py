@@ -1,5 +1,7 @@
 import base64
 import json
+from datetime import datetime
+import time
 
 print('Loading function')
 
@@ -11,12 +13,18 @@ def lambda_handler(event, context):
         print(record['recordId'])
         payload = base64.b64decode(record['data']).decode('utf-8')
         payload1 = json.loads(payload)
+        date_string  = str(payload1['time'])
+        date_object = datetime.strptime(date_string,'%d/%b/%Y:%H:%M:%S %z')
+        timestamp = time.mktime(date_object.timetuple())
+        
         day  = payload1["time"].split("/")[0]
         month  = payload1["time"].split("/")[1]
         year  = payload1["time"].split("/")[2].split(":")[0]
         hour  = payload1["time"].split("/")[2].split(":")[1]
         minute  = payload1["time"].split("/")[2].split(":")[2]
         second  = payload1["time"].split("/")[2].split(":")[3].split()[0]
+        
+        payload1["time"] =  timestamp
         
         partition_keys  = {
             "day":    day,
@@ -26,6 +34,8 @@ def lambda_handler(event, context):
             "minute":   minute,
             "second":  second
         }
+        
+        payload = json.dumps(payload1)
 
         output_record = {
             'recordId': record['recordId'],
