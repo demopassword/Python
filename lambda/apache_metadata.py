@@ -17,6 +17,9 @@ def lambda_handler(event, context):
         date_object = datetime.strptime(date_string,'%d/%b/%Y:%H:%M:%S %z')
         timestamp = time.mktime(date_object.timetuple())
         
+        # lambda now time
+        now_time = datetime.now()
+
         day  = payload1["time"].split("/")[0]
         month  = payload1["time"].split("/")[1]
         year  = payload1["time"].split("/")[2].split(":")[0]
@@ -25,6 +28,7 @@ def lambda_handler(event, context):
         second  = payload1["time"].split("/")[2].split(":")[3].split()[0]
         
         payload1["time"] =  timestamp
+        payload1["now_time"] = str(now_time)
         
         partition_keys  = {
             "day":    day,
